@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.corporate.knowledge.test.service.persistence.impl.CandidatePersistenceImpl" activate="activate" deactivate="deactivate">
+  <service>
+    <provide interface="com.corporate.knowledge.test.service.persistence.CandidatePersistence"/>
+  </service>
+  <reference name="Configuration" interface="com.liferay.portal.kernel.configuration.Configuration" target="(origin.bundle.symbolic.name=com.corporate.knowledge.test.service)" bind="setConfiguration"/>
+  <reference name="DataSource" interface="javax.sql.DataSource" target="(origin.bundle.symbolic.name=com.corporate.knowledge.test.service)" bind="setDataSource"/>
+  <reference name="SessionFactory" interface="com.liferay.portal.kernel.dao.orm.SessionFactory" target="(origin.bundle.symbolic.name=com.corporate.knowledge.test.service)" bind="setSessionFactory"/>
+  <reference name="entityCache" interface="com.liferay.portal.kernel.dao.orm.EntityCache" field="entityCache"/>
+  <reference name="finderCache" interface="com.liferay.portal.kernel.dao.orm.FinderCache" field="finderCache"/>
+  <implementation class="com.corporate.knowledge.test.service.persistence.impl.CandidatePersistenceImpl"/>
+</scr:component>

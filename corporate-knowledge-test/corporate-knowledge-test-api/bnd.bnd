@@ -1,0 +1,11 @@
+Bundle-Name: corporate-knowledge-test-api
+Bundle-SymbolicName: com.corporate.knowledge.test.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.corporate.knowledge.test.exception,\
+	com.corporate.knowledge.test.model,\
+	com.corporate.knowledge.test.service,\
+	com.corporate.knowledge.test.service.persistence,\
+	com.corporate.knowledge.test.helper
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../corporate-knowledge-test-service/service.xml

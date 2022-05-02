@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.corporate.knowledge.test.service.impl.CandidateServiceImpl">
+  <property name="json.web.service.context.name" type="String" value="knowledgetest"/>
+  <property name="json.web.service.context.path" type="String" value="Candidate"/>
+  <service>
+    <provide interface="com.liferay.portal.aop.AopService"/>
+  </service>
+  <reference name="candidateLocalService" interface="com.corporate.knowledge.test.service.CandidateLocalService" field="candidateLocalService"/>
+  <reference name="candidatePersistence" interface="com.corporate.knowledge.test.service.persistence.CandidatePersistence" field="candidatePersistence"/>
+  <reference name="classNameLocalService" interface="com.liferay.portal.kernel.service.ClassNameLocalService" field="classNameLocalService"/>
+  <reference name="classNameService" interface="com.liferay.portal.kernel.service.ClassNameService" field="classNameService"/>
+  <reference name="counterLocalService" interface="com.liferay.counter.kernel.service.CounterLocalService" field="counterLocalService"/>
+  <reference name="productoPersistence" interface="com.corporate.knowledge.test.service.persistence.ProductoPersistence" field="productoPersistence"/>
+  <reference name="resourceLocalService" interface="com.liferay.portal.kernel.service.ResourceLocalService" field="resourceLocalService"/>
+  <reference name="userLocalService" interface="com.liferay.portal.kernel.service.UserLocalService" field="userLocalService"/>
+  <reference name="userService" interface="com.liferay.portal.kernel.service.UserService" field="userService"/>
+  <implementation class="com.corporate.knowledge.test.service.impl.CandidateServiceImpl"/>
+</scr:component>

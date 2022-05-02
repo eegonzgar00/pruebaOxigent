@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.corporate.knowledge.test.model.Candidate">
+		<field name="uuid" type="String" />
+		<field name="candidateId" type="long" />
+		<field name="name" type="String" />
+		<field name="company" type="String" />
+		<field name="passed" type="boolean" />
+		<field name="points" type="int" />
+		<field name="testDate" type="Date" />
+		<field name="location" type="String" />
+	</model>
+	<model name="com.corporate.knowledge.test.model.Producto">
+		<field name="uuid" type="String" />
+		<field name="productId" type="long" />
+		<field name="name" type="String" />
+		<field name="creationDate" type="Date" />
+	</model>
+</model-hints>

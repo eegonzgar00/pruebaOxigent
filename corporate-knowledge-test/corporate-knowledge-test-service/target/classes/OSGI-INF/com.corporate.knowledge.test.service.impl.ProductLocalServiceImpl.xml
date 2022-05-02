@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.corporate.knowledge.test.service.impl.ProductLocalServiceImpl">
+  <property name="model.class.name" type="String" value="com.corporate.knowledge.test.model.Product"/>
+  <service>
+    <provide interface="com.liferay.portal.aop.AopService"/>
+  </service>
+  <reference name="candidatePersistence" interface="com.corporate.knowledge.test.service.persistence.CandidatePersistence" field="candidatePersistence"/>
+  <reference name="classNameLocalService" interface="com.liferay.portal.kernel.service.ClassNameLocalService" field="classNameLocalService"/>
+  <reference name="counterLocalService" interface="com.liferay.counter.kernel.service.CounterLocalService" field="counterLocalService"/>
+  <reference name="productPersistence" interface="com.corporate.knowledge.test.service.persistence.ProductPersistence" field="productPersistence"/>
+  <reference name="resourceLocalService" interface="com.liferay.portal.kernel.service.ResourceLocalService" field="resourceLocalService"/>
+  <reference name="userLocalService" interface="com.liferay.portal.kernel.service.UserLocalService" field="userLocalService"/>
+  <implementation class="com.corporate.knowledge.test.service.impl.ProductLocalServiceImpl"/>
+</scr:component>

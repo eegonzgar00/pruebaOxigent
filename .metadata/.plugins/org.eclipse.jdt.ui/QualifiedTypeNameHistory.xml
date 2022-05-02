@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.corporate.knowledge.test.service.CandidateLocalService"/>
+<fullyQualifiedTypeName name="com.liferay.counter.kernel.service.CounterLocalService"/>
+<fullyQualifiedTypeName name="com.corporate.knowledge.test.helper.ICandidateHelperService"/>
+<fullyQualifiedTypeName name="org.osgi.service.component.annotations.Component"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.theme.ThemeDisplay"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.WebKeys"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.ParamUtil"/>
+<fullyQualifiedTypeName name="org.osgi.service.component.annotations.Reference"/>
+<fullyQualifiedTypeName name="com.corporate.knowledge.test.model.CandidateModel"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.corporate.knowledge.test.model.impl.CandidateImpl"/>
+<fullyQualifiedTypeName name="com.corporate.knowledge.test.model.Candidate"/>
+</qualifiedTypeNameHistroy>

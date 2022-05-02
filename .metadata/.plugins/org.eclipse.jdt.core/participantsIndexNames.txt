@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\SoporteT\pruebaOxigent\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\430886496.index
+\corporate-knowledge-test-web\src\main\java

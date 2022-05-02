@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.corporate.knowledge.test">
+	<namespace>knowledgeTest</namespace>
+	
+	<entity name="Candidate" local-service="true" remote-service="true" uuid="true">
+
+		<column name="candidateId" primary="true" type="long" />
+		<column name="name" type="String" />
+		<column name="company" type="String" />
+		<column name="passed" type="boolean" />
+		<column name="points" type="int" />
+		<column name="testDate" type="Date" />
+		<column name="location" type="String" />
+ 
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="candidateId" />
+		</order>
+
+	</entity>
+	
+		<entity name="Producto" local-service="true" remote-service="true" uuid="true">
+
+		<column name="productId" primary="true" type="long" />
+		<column name="name" type="String" />
+		<column name="creationDate" type="Date" />
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="productId" />
+		</order>
+
+	</entity>
+</service-builder>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="corporate.knowledge.test.web.portlet.GetCandidateMVCRenderCommand" immediate="true">
+  <implementation class="corporate.knowledge.test.web.portlet.GetCandidateMVCRenderCommand"/>
+  <service>
+    <provide interface="com.liferay.portal.kernel.portlet.bridges.mvc.MVCRenderCommand"/>
+  </service>
+  <reference name="candidateLocalService" interface="com.corporate.knowledge.test.service.CandidateLocalService" field="candidateLocalService"/>
+  <property name="mvc.command.name" type="String" value="/knowledgetest/candidate/get"/>
+  <property name="javax.portlet.name" type="String" value="corporate_knowledge_test_web_CorporateKnowledgeTestWebPortlet"/>
+</scr:component>

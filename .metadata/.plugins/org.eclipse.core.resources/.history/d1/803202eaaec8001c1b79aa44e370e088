@@ -1,0 +1,77 @@
+package corporate.knowledge.test.web.portlet;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.PortletException;
+
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import com.corporate.knowledge.test.helper.ICandidateHelperService;
+import com.corporate.knowledge.test.model.Candidate;
+import com.corporate.knowledge.test.model.CandidateModel;
+import com.corporate.knowledge.test.service.CandidateLocalService;
+import com.liferay.counter.kernel.service.CounterLocalService;
+import com.liferay.expando.kernel.model.ExpandoBridge;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.model.BaseModel;
+import com.liferay.portal.kernel.model.CacheModel;
+import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;
+import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.WebKeys;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Map;
+
+import corporate.knowledge.test.web.constants.CorporateKnowledgeTestWebPortletKeys;
+
+/* @formatter:off */
+@Component(
+		immediate = true,
+		property = { 
+				"javax.portlet.name=" + CorporateKnowledgeTestWebPortletKeys.CORPORATEKNOWLEDGETESTWEB, 
+				"mvc.command.name=" + "/knowledgetest/candidate/save" 
+		},
+		service = MVCActionCommand.class
+)
+/* @formatter:ON */
+public class SaveCandidateMVCActionCommand implements MVCActionCommand {
+	
+	// TODO Ejercicio 1.b: Inyectar mediante referencia varios servicios en el command:	CandidateLocalService, CounterLocalService y ICandidateHelperService
+	
+	@Reference
+	private CandidateLocalService candidateLocalService;
+	
+	@Reference
+	private CounterLocalService counterLocalServic;
+	
+	@Reference
+	private ICandidateHelperService iCandidateHelperService;
+
+	@Override
+	public boolean processAction(ActionRequest actionRequest, ActionResponse actionResponse) throws PortletException {
+    	
+		// TODO Ejercicio 4.a: Completar la acción o método de processAction de SaveCandidateMVCActionCommand para que actualice o guarde un candidato, según esté informado o no el parámetro candidateId
+		final ThemeDisplay td = (ThemeDisplay) actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
+        final String name = ParamUtil.getString(actionRequest, "name");
+        final String company = ParamUtil.getString(actionRequest, "company");
+        final long id = ParamUtil.getLong(actionRequest, "candidateId");
+		// TODO Ejercicio 4.b: Validar el nombre de entrada del candidato mediante el método validateName el servicio CandidateHelperServiceImpl implementado en el apartado 1.c
+       try {
+		Candidate candidate = null;
+		candidate.setName(name);
+		candidate.setCompany(company);
+		candidateLocalService.addCandidate(candidate);
+	} catch (PortalException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    
+        //
+		return true;
+	}
+
+}
